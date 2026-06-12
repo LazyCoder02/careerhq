@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #050505;
+  --bg2: #0A0909;
+  --card: #171515;
+  --card2: #1C1A1A;
+  --border: #302B2B;
+  --border2: #1C1A1A;
+  --text: #F7F7F7;
+  --text2: #D7D5D5;
+  --text3: #6B6868;
+  --accent: #E8E0D0;
+  --amber: #C9A96E;
+  --amber2: #a07840;
+  --green: #4a7c59;
+  --red: #8a3a3a;
+  --blue: #3a5a7c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+}
+
+.font-head { font-family: 'Syne', sans-serif; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
