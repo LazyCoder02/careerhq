@@ -1,6 +1,7 @@
 # CareerHQ
 
 Personal job tracking, CV management, and AI career assistant.
+More features and refinery on the way!!!
 
 ## Getting Started
 
