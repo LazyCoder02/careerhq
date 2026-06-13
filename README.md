@@ -1,48 +1,36 @@
 # CareerHQ
 
-Personal job tracking, CV management, and AI career assistant.
-More features and refinery on the way!!!
+A personal job-tracking, résumé and project-management web app with "Teal", an AI assistant powered by the Claude API. Built with Next.js, React and TypeScript, it uses Apify to scrape jobs from JustJoin.it — focused mostly on IT roles across Poland. The app tailors résumés from a master CV to specific IT roles of your choosing, then scores your CV against the skills and keywords found in them. Projects shown on your portfolio are managed here too, by toggling each repository's visibility.
 
-## Getting Started
+## Overall goal
+
+Avoid over-applying: identify gaps in your skills and offer a path to bridge them — aimed at junior developers and people just starting out.
+
+## Features
+
+- Job ingestion from JustJoin.it (via Apify), filtered to Poland + remote/hybrid/office
+- Daily scrape (Vercel Cron) and on-demand "Scrape now"
+- CV upload (PDF/DOCX) → skill extraction → readiness scoring and job matching
+- AI résumé tailoring per job (Anthropic Claude), with a heuristic fallback
+- GitHub project sync with per-repo portfolio visibility
+
+## Running locally
 
 ```bash
 npm install
-npm run dev
+cp .env.example .env     # then fill in the values below
+npm run dev              # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+### Environment variables
 
-## WebStorm Setup
+| Variable | Purpose | Where to get it |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | Powers the Teal assistant (coaching + résumé tailoring) | https://console.anthropic.com → API keys |
+| `APIFY_TOKEN` | Authenticates the JustJoin.it scraper that fetches job listings | https://console.apify.com → Settings → API & Integrations |
+| `CRON_SECRET` | Protects the scheduled scrape route. Optional locally. Generate with `openssl rand -hex 32` (or `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`) | You generate it yourself |
+| `GITHUB_USERNAME` | Whose public repositories appear on the Projects tab | Your GitHub handle (e.g. `LazyCoder02`) |
 
-1. Open the project folder in WebStorm — it will detect Next.js automatically
-2. Go to **Settings → Languages & Frameworks → JavaScript → Webpack** and point it to `next.config.ts` if imports aren't resolving
-3. The `@/*` path alias is configured in `tsconfig.json` — WebStorm picks this up automatically for auto-imports
-4. Enable **ESLint** via Settings → Languages & Frameworks → JavaScript → Code Quality Tools → ESLint → Automatic
-5. For Tailwind class suggestions install the **Tailwind CSS** plugin from the JetBrains marketplace
+### Triggering a scrape
 
-## Structure
-
-```
-app/
-  dashboard/           ← all dashboard pages
-    page.tsx           ← Home
-    jobs/page.tsx      ← Job Tracker
-    resumes/page.tsx   ← Your Resumes
-    projects/page.tsx  ← Projects
-    teal/page.tsx      ← Teal AI assistant
-components/
-  layout/Sidebar.tsx   ← sidebar nav
-  ui/                  ← StatCard, StatusPill, SectionCard, ReadinessBar
-lib/
-  mock-data.ts         ← placeholder data — swap for Prisma queries later
-types/
-  index.ts             ← all TypeScript types
-```
-
-## Next steps
-
-- Set up PostgreSQL and add `prisma/schema.prisma`
-- Replace mock-data imports with Prisma queries in each page
-- Add GitHub OAuth via Auth.js
-- Set up Vercel Cron for Teal scheduler (`vercel.json`)
-- Connect AI model for Teal (`app/api/teal/run/route.ts`)
+Click **Scrape now** in the Job Tracker, or call `POST /api/jobs/refresh`. The daily schedule is defined in `vercel.json`.
