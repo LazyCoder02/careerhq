@@ -35,8 +35,7 @@ npm run dev              # http://localhost:3000
 
 Click **Scrape now** in the Job Tracker, or call `POST /api/jobs/refresh`. The daily schedule is defined in `vercel.json`.
 
-## Screenshots
-![Home dashboard]([docs/screenshots/home.png](https://github.com/LazyCoder02/careerhq/blob/4474acb9dd681f430e5a1eb79c5b572c7527d620/Home.png))
-![Job Tracker — discovered Poland jobs]([docs/screenshots/jobs.png](https://github.com/LazyCoder02/careerhq/blob/4474acb9dd681f430e5a1eb79c5b572c7527d620/Job%20Tracker.png))
-![Résumé tailoring]([docs/screenshots/resumes.png](https://github.com/LazyCoder02/careerhq/blob/4474acb9dd681f430e5a1eb79c5b572c7527d620/Your_Resume.png))
-![Teal coaching]([docs/screenshots/teal.png](https://github.com/LazyCoder02/careerhq/blob/4474acb9dd681f430e5a1eb79c5b572c7527d620/Teal.png))
+![Home dashboard](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Home.png)
+![Job Tracker — discovered Poland jobs](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Job%20Tracker.png)
+![Résumé tailoring](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Your_Resume.png)
+![Teal coaching](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Teal.png)
