@@ -35,7 +35,14 @@ npm run dev              # http://localhost:3000
 
 Click **Scrape now** in the Job Tracker, or call `POST /api/jobs/refresh`. The daily schedule is defined in `vercel.json`.
 
+#Home
 ![Home dashboard](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Home.png)
+
+#JobTracker
 ![Job Tracker — discovered Poland jobs](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Job%20Tracker.png)
+
+#Résumé
 ![Résumé tailoring](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Your_Resume.png)
+
+#Teal
 ![Teal coaching](https://raw.githubusercontent.com/LazyCoder02/careerhq/4474acb9dd681f430e5a1eb79c5b572c7527d620/Teal.png)
